@@ -2,8 +2,9 @@ wget -t 2 -T 10 -N https://github.com/nezhahq/agent/releases/latest/download/nez
 unzip -qod ./ nezha-agent_linux_amd64.zip
 wget -t 2 -T 10 -N https://github.com/go-gost/gost/releases/download/v3.0.0-rc8/gost_3.0.0-rc8_linux_amd64v3.tar.gz
 tar -xzvf gost_3.0.0-rc8_linux_amd64v3.tar.gz
-rm -rf gost_3.0.0-rc8_linux_amd64v3.tar.gz
-./gost -L ss://chacha20-ietf-poly1305:pass@:${SERVER_PORT} & 
+rm -rf gost_3.0.0-rc8_linux_amd64v3.tar.gz README* LICENSE
 rm -f nezha-agent_linux_amd64.zip
-chmod +x nezha-agent
-./nezha-agent -s xxx.xx:555 -p xxx
+chmod +x nezha-agent gost
+# ./gost -L ss://chacha20-ietf-poly1305:pass@:${SERVER_PORT} &
+# ./app -p ${SERVER_PORT} &
+./nezha-agent -s data-nztz.appgy.tk:443 -p 4NVnkX1n2nllGptyDQ --tls
